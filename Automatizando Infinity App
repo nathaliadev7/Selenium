@@ -1,0 +1,107 @@
+from selenium import webdriver
+from getpass import getpass
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from time import sleep
+
+
+Escolha=int(input('1. Aulas Compartilhadas; 2.Aulas Particulares; 3.Super Módulos; 4. Aulas de Reposição: '))
+if(Escolha==1):
+    navegador = webdriver.Chrome()
+
+    cpf=('07035339590')
+
+    site=(r'https://www.infinityschool.app/')
+
+    navegador.get(site)
+
+    Area_Dos_Alunos_botton= navegador.find_element(By.XPATH,'//*[@id="geral_home"]/center[2]/a/button')
+    Area_Dos_Alunos_botton.click()
+
+    Campo_CPF=navegador.find_element(By.CLASS_NAME,'campo')
+    Campo_CPF.send_keys(cpf)
+
+    Botton_Acesso=navegador.find_element(By.XPATH,'//*[@id="margem"]/center/form/button')
+    Botton_Acesso.click()
+
+    Aulas_Compartilhadas=navegador.find_element(By.XPATH,'//*[@id="top_home2"]/center[2]/center[4]/form/button')
+    Aulas_Compartilhadas.click()
+    
+    sleep(89)
+    
+elif(Escolha==2):
+    
+    navegador = webdriver.Chrome()
+
+    cpf=('07035339590')
+
+    site=(r'https://www.infinityschool.app/')
+
+    navegador.get(site)
+
+    Area_Dos_Alunos_botton= navegador.find_element(By.XPATH,'//*[@id="geral_home"]/center[2]/a/button')
+    Area_Dos_Alunos_botton.click()
+
+    Campo_CPF=navegador.find_element(By.CLASS_NAME,'campo')
+    Campo_CPF.send_keys(cpf)
+
+    Botton_Acesso=navegador.find_element(By.XPATH,'//*[@id="margem"]/center/form/button')
+    Botton_Acesso.click()
+    
+    Aulas_Particulares=navegador.find_element(By.XPATH,'//*[@id="top_home2"]/center[2]/center[6]/form/button')
+    Aulas_Particulares.click()
+
+    Botton_quantidade=navegador.find_element(By.XPATH,'//*[@id="geral_home4"]/center[2]/form/select[1]')
+    Botton_Avancar=navegador.find_element(By.NAME,'aa')
+    Botton_Avancar.click()
+    
+    
+    sleep(89)
+elif Escolha==3:
+    
+    navegador = webdriver.Chrome()
+
+    cpf=('07035339590')
+
+    site=(r'https://www.infinityschool.app/')
+
+    navegador.get(site)
+
+    Area_Dos_Alunos_botton= navegador.find_element(By.XPATH,'//*[@id="geral_home"]/center[2]/a/button')
+    Area_Dos_Alunos_botton.click()
+
+    Campo_CPF=navegador.find_element(By.CLASS_NAME,'campo')
+    Campo_CPF.send_keys(cpf)
+
+    Botton_Acesso=navegador.find_element(By.XPATH,'//*[@id="margem"]/center/form/button')
+    Botton_Acesso.click()
+    
+    Super_modulos=navegador.find_element(By.XPATH,'//*[@id="top_home2"]/center[2]/center[5]/form/button')
+    Super_modulos.click()
+    
+    sleep(89)
+    
+else:
+
+    navegador = webdriver.Chrome()
+
+    cpf=('07035339590')
+
+    site=(r'https://www.infinityschool.app/')
+
+    navegador.get(site)
+
+    Area_Dos_Alunos_botton= navegador.find_element(By.XPATH,'//*[@id="geral_home"]/center[2]/a/button')
+    Area_Dos_Alunos_botton.click()
+
+    Campo_CPF=navegador.find_element(By.CLASS_NAME,'campo')
+    Campo_CPF.send_keys(cpf)
+
+    Botton_Acesso=navegador.find_element(By.XPATH,'//*[@id="margem"]/center/form/button')
+    Botton_Acesso.click()
+    
+    Aula_Reposição=navegador.find_element(By.XPATH,' //*[@id="top_home2"]/center[2]/center[3]/form/button')
+    Aula_Reposição.click()   
+    
+    
+    sleep(89)
