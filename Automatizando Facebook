@@ -1,0 +1,28 @@
+from selenium import webdriver
+from time import sleep
+from getpass import getpass
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+
+
+senha =getpass('Digite sua senha: ')#Defina a senha com o método getpass para não dar pra ver a senha;
+
+#Coloque o navegador que vai usar
+navegador = webdriver.Chrome()#Fazendo a ponte entre o código e o navegador que será usado.
+
+#Entrando em um link
+site =(r'https://pt-br.facebook.com/')#Coloque o site que voce quer automatizar;
+navegador.get(site)# use o método get para 'pegar' esse site.
+
+email_box = navegador.find_element(By.NAME,'email')# Caixa de email = encontre o elemento pelo id, que é email
+email_box.send_keys('naatymaceedo@gmail.com')# Coloque o email que vai usar para logar
+
+senha_box = navegador.find_element(By.ID,'pass')#Caixa da senha, encontre o elemento senha através do ID, que é senha e foi definida lá em cima
+senha_box.send_keys(senha)#Chamando a senha que foi colocada la em cima com o metodo getpass
+
+
+
+btn_login = navegador.find_element(By.NAME,'login')# Precisamos apertar o botao de login, logo, chamamos por ele no navegador, procurando o elemento, também pelo ID;
+btn_login.click()#Clicamos no botão e pronto! Está automatizado
+
+sleep(89)
